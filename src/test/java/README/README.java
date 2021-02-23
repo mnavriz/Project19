@@ -33,11 +33,11 @@ Project Structure:
   Preferable one for employees tests and one for entrance exam tests scenarios
   Define your test steps so that they will be re-usable in other tests as much as possible
   Use Gherkin language for your test steps (Given, When, Then, And, etc)
-- In pages folder, create a Base class having common methods for other page classes
+- ++In pages folder, create a Base class having common methods for other page classes
   Also create the page classes for each page or section or component you will use for your tests
   In your page classes there should not be anything more than the web elements you need for testing
   and the corresponding actions of those web Elements. And the constructor of the page class.
-- Keep your step definition methods of the cucumber test steps in the stepDefinitions folder.
+- ++Keep your step definition methods of the cucumber test steps in the stepDefinitions folder.
 - ++Create a Hook class in stepDefinitions folder. Keep your @Before and @After annotated methods here
 - ++Create a method in the Hook class which takes screenshot after each scenario that fails
   Create a "resources" folder under "test" folder (and assign it as resources folder if IntelliJ does not do it automatically)
