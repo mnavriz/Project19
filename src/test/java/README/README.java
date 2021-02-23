@@ -14,10 +14,10 @@ Good Luck!
 
 Tests:
 - You are expected to test/verify that
-   + we can create an employee with the min required info
-   + we can update the employee we have created
+   + ++we can create an employee with the min required info
+   + ++we can update the employee we have created
      Test to update of at least three different info, each one at a time (Scenario Outline)
-   + we can delete the employee we have created
+   + ++we can delete the employee we have created
 - You are also expected to create your own tests (similar to employees) regarding "entrance exams"
 
 Project Structure:

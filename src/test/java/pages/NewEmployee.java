@@ -36,6 +36,8 @@ public class NewEmployee extends Base {
     private WebElement Message;
 
 
+
+
     public void fillFirstName(String firstName){sendKeysToElement(FirstName,firstName);}
 
     public void fillLastName(String lastName){sendKeysToElement(LastName, lastName);}
@@ -70,4 +72,6 @@ public class NewEmployee extends Base {
     public void verifyAddingEmployee(){
         Assert.assertEquals("Employee successfully created",Message.getText());
     }
+
+
 }
