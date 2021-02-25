@@ -69,7 +69,7 @@ public class NewEmployee extends Base {
         clickOnElement(SaveButton);
     }
 
-    public void verifyAddingEmployee(){
+    public void verifyCreatingEmployee(){
         Assert.assertEquals("Employee successfully created",Message.getText());
     }
 
