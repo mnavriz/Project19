@@ -11,9 +11,6 @@ public class ExamSteps {
     EntranceExaminations examinations = new EntranceExaminations();
     NewExam newExam = new NewExam();
     Exam exam = new Exam();
-    Employees employees = new Employees();
-    Employee employee = new Employee();
-    NewEmployee newEmployee = new NewEmployee();
 
     @Given("Click on Entrance Exam")
     public void clickOnEntranceExam() {

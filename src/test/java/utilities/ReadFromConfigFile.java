@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadFromConfigFile {
+
     public static String getValueFor(String key) {
         String filePath = "src/test/resources/config.properties";
         String value = null;
