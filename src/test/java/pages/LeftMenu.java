@@ -14,12 +14,13 @@ public class LeftMenu extends Base {
     private WebElement HumanResourcesMenu;
 
     @FindBy(xpath = "//span[text()='Employees']")
-    private WebElement Employee;
+    private WebElement Employees;
 
     @FindBy(xpath = "//span[text()='Entrance Exams']")
     private WebElement EntranceExams;
 
     @FindBy(css = "a[href='/exam/list']")
+
     private WebElement EntranceExamsSub;
 
     @FindBy(css = "fuse-nav-vertical-collapsable.ng-tns-c103-16.nav-collapsable.nav-item.ng-star-inserted.open > div > fuse-nav-vertical-collapsable > a")
@@ -29,12 +30,13 @@ public class LeftMenu extends Base {
         clickOnElement(HumanResourcesMenu);
     }
 
-    public void clickOnEmployee(){
-        clickOnElement(Employee);
+    public void clickOnEmployees(){
+        clickOnElement(Employees);
     }
 
     public void clickOnEntranceExams(){clickOnElement(EntranceExams);}
 
     public void clickOnEntranceExamsSub(){clickOnElement(EntranceExamsSub);}
 
+    public  void SetupSubMenu(){clickOnElement(SetupSubMenu);}
 }

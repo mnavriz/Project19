@@ -55,7 +55,7 @@ public class Employees extends Base {
 
     public void clickOnYesToConfirm(){clickOnElement(confirmYesButton);}
 
-    public void verifyDeletingEmployee(){
-        Assert.assertEquals("Employee successfully deleted",Message.getText());
-    }
+   // public void verifyDeletingEmployee(){
+    //    Assert.assertEquals("Employee successfully deleted",Message.getText());
+    //}
 }

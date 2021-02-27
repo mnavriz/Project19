@@ -9,22 +9,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Base;
+import pages.LoginPage;
+import utilities.Driver;
+import utilities.ReadFromConfigFile;
 
 public class Hooks extends Base {
 
-    public Hooks(WebDriver driver, WebDriverWait wait) {
-        super();
-    }
-
-    public Hooks() {
-    }
+    WebDriver driver = Driver.getDriver();
+    LoginPage loginPage = new LoginPage();
 
     @Before
-    public void start() {
-        System.setProperty("webdriver.chrome.driver", "/Users/MN/Desktop/chromedriver");
-        driver = new ChromeDriver(); // TODO: parameterize browser
+    public void setUp() {
+        driver.get(ReadFromConfigFile.getValueFor("homepage"));
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 15);
+        loginPage.enterUsername(ReadFromConfigFile.getValueFor("username"));
+        loginPage.enterPassword(ReadFromConfigFile.getValueFor("password"));
+        loginPage.clickOnLoginButton();
     }
 
     @After

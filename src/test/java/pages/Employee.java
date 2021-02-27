@@ -25,13 +25,13 @@ public class Employee extends Base {
 
     public void fillLastName(String lastName){sendKeysToElement(LastName, lastName);}
 
-    public void fillEmployeeID(String employeeID){sendKeysToElement(LastName, employeeID);}
+    public void fillEmployeeID(String employeeID){sendKeysToElement(EmployeeID, employeeID);}
 
-    public void clickOnSaveButton(){
-        clickOnElement(SaveButton);
-    }
+    //public void clickOnSaveButton(){
+       // clickOnElement(SaveButton);
+  //  }
 
-    public void verifyAddingEmployee(){
-        Assert.assertEquals("Employee successfully updated",Message.getText());
+    public void verifyUpdatingEmployee(String status){
+        Assert.assertEquals(status,Message.getText());
     }
 }

@@ -5,8 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-        features = {},//paste here the feature file ptah
-        glue = {"steps"},
+        features = {"src/test/java/features/EmployeeCreateUpdateDelete.feature"},//paste here the feature file ptah
+        glue = {"StepDefinitions"},
         dryRun = false,
         plugin = {"pretty", "html:target/report/index.html"}
 

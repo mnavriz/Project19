@@ -42,7 +42,7 @@ public class NewEmployee extends Base {
 
     public void fillLastName(String lastName){sendKeysToElement(LastName, lastName);}
 
-    public void fillEmployeeID(String employeeID){sendKeysToElement(LastName, employeeID);}
+    public void fillEmployeeID(String employeeID){sendKeysToElement(EmployeeID, employeeID);}
 
     public void fillDocumentNumber(String documentNumber){
 
