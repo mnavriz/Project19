@@ -26,17 +26,30 @@ public class LeftMenu extends Base {
     @FindBy(css = "fuse-nav-vertical-collapsable.ng-tns-c103-16.nav-collapsable.nav-item.ng-star-inserted.open > div > fuse-nav-vertical-collapsable > a")
     private WebElement SetupSubMenu;
 
-    public void clickOnHumanResourcesMenu(){
-        clickOnElement(HumanResourcesMenu);
+    WebElement Webelement;
+    public void clickFunction(String element){
+        switch (element){
+            case "HumanResourcesMenu":
+                Webelement = HumanResourcesMenu;
+                break;
+            case "Employees":
+                Webelement = Employees;
+                break;
+            case "EntranceExams":
+                Webelement = EntranceExams;
+                break;
+
+            case "EntranceExamsSub":
+                Webelement = EntranceExamsSub;
+                break;
+
+            case "SetupSubMenu":
+                Webelement = SetupSubMenu;
+                break;
+
+
+        }
+        clickOnElement(Webelement);
+
     }
-
-    public void clickOnEmployees(){
-        clickOnElement(Employees);
-    }
-
-    public void clickOnEntranceExams(){clickOnElement(EntranceExams);}
-
-    public void clickOnEntranceExamsSub(){clickOnElement(EntranceExamsSub);}
-
-    public  void SetupSubMenu(){clickOnElement(SetupSubMenu);}
 }

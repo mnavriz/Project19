@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,22 +25,40 @@ public class LoginPage extends Base{
     @FindBy(id = "toast-container")
     private WebElement alertDialogBox;
 
+    @FindBy(xpath =("//a[text() = 'Got it!']"))
+     public WebElement GotItButton;
 
+WebElement Webelement;
 
+    public void sendKeyFunction(String element, String text){
+        switch (element){
+            case "usernameElement":
+                Webelement = usernameElement;
+                break;
+            case "passwordElement":
+                Webelement = passwordElement;
+                break;
+        }
+        sendKeysToElement(Webelement, text);
 
-    public void enterUsername(String username) {
-        sendKeysToElement(usernameElement, username);
     }
 
-    public void enterPassword(String password){
-        sendKeysToElement(passwordElement, password);
-    }
+    public void clickFunction(String element){
+        switch (element){
+            case "loginButton":
+                Webelement = loginButton;
+                break;
+            case "GotItButton":
+                Webelement = GotItButton;
+                break;
+                   }
+        clickOnElement(Webelement);
 
-    public void clickOnLoginButton(){
-        clickOnElement(loginButton);
     }
-
     public String getTextOfAlertDialogBox(){
         return getTextOfElement(alertDialogBox);
+
+
     }
+
 }

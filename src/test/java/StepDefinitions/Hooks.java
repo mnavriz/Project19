@@ -3,6 +3,7 @@ package StepDefinitions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,8 @@ import pages.LoginPage;
 import utilities.Driver;
 import utilities.ReadFromConfigFile;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks extends Base {
 
     WebDriver driver = Driver.getDriver();
@@ -20,11 +23,10 @@ public class Hooks extends Base {
 
     @Before
     public void setUp() {
-        driver.get(ReadFromConfigFile.getValueFor("homepage"));
+        //driver.get(ReadFromConfigFile.getValueFor("homepage"));
         driver.manage().window().maximize();
-        loginPage.enterUsername(ReadFromConfigFile.getValueFor("username"));
-        loginPage.enterPassword(ReadFromConfigFile.getValueFor("password"));
-        loginPage.clickOnLoginButton();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
     }
 
     @After

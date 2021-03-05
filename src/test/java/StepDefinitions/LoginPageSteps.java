@@ -24,23 +24,10 @@ public class LoginPageSteps  {
             driver.get("https://test.campus.techno.study");
     }
 
-    @And("Enter username")
-    public void enterUsername() {
-        loginPage.enterUsername("daulet2030@gmail.com");
-    }
-
-    @And("Enter password")
-    public void enterPassword() {
-        loginPage.enterPassword("TechnoStudy123@");
-    }
-
-    @When("Click on login button")
-    public void clickOnLoginButton() {
-        loginPage.clickOnLoginButton();
-    }
-
     @Then("Verify login")
     public void verifyLoginStatus() {
         Assert.assertTrue(topMenu.getTextOfTopMenuProfileMenu().contains("Saurbekov"));
     }
+
+
 }

@@ -7,10 +7,10 @@ import pages.*;
 
 public class ExamSteps {
 
-    LeftMenu leftMenu = new LeftMenu();
+/*
     EntranceExaminations examinations = new EntranceExaminations();
-    NewExam newExam = new NewExam();
     Exam exam = new Exam();
+    LeftMenu leftMenu = new LeftMenu();
 
     @Given("Click on Entrance Exam")
     public void clickOnEntranceExam() {
@@ -18,16 +18,16 @@ public class ExamSteps {
     }
 
     @And("Click on Setup submenu")
-    public void clickOnSetupSubmenu() {leftMenu.SetupSubMenu();}
+    //public void clickOnSetupSubmenu() {leftMenu.SetupSubMenu();}
 
     @And("Click on Entrance Exam under Setup")
-    public void clickOnEntranceExamUnderSetup() {leftMenu.clickOnEntranceExamsSub();}
+   // public void clickOnEntranceExamUnderSetup() {leftMenu.clickOnEntranceExamsSub();}
 
     @When("Click on Add on Exam button")
-    public void clickOnAddOnExamButton() {examinations.clickOnaddExamButton();}
+    public void clickOnAddOnExamButton() {exam.clickFunction();}
 
     @And("Enter Name {string}")
-    public void enterName(String name) {newExam.fillName(name);}
+    public void enterName(String name) {Exam.fillName(name);}
 
     @And("Click and Choose Academic Period")
     public void chooseAcademicPeriod() {
@@ -64,6 +64,6 @@ public class ExamSteps {
         exam.clickOnGradeLevel();
         exam.chooseGradeLevelTechno1();
     }
-
+*/
 
 }

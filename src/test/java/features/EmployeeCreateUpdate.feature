@@ -42,33 +42,26 @@ Feature: Creating,updating and deleting an employee
 
 
 
-  Scenario Outline: Update the employee who just created
+  Scenario: Update the employee who just created
       Given User clicks in "leftMenu"
         |HumanResourcesMenu|
         |Employees|
-  And   User sends key in "employees"
-        | FirstNameSearch  | <Name to search> |
-
-
-    And User clicks in "employees"
-      |SearchButton|
-      |EditEmployeeButton|
+    And User clicks in "employee"
+    |ItemPerPage|
+    And User selects Max Value from dropdown in "employee"
+    |ItemsPerPageOption|
+    And User handles table in "employee"
+      |namelist|Mustafa|Edit|
     When User sends key in "employee"
-      | FirstName  | <First Name> |
-      | LastName   | <Last Name>  |
-      | EmployeeID | <Employee ID>  |
+      | FirstName  | afatsum |
+      | LastName   | Zirvan  |
+      | EmployeeID | 55555 |
     Then User clicks in "employee"
       |SaveButton|
     And Verify in "employee"
       |Message |Employee successfully updated |
 
-    Examples:
-      | Name to search | First Name | Last Name | Employee ID |
-      | Mustafa        | Afatsum    | Zirva     | 009988      |
-      #| Afatsum        | First Name | Zirvan    | Employee ID |
-     # | First Name     | First Name | Last Name | 445566      |
 
-      #And   Verify
 
 
 

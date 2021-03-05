@@ -28,34 +28,57 @@ public class Employees extends Base {
     @FindBy(css = "ms-delete-button")
     private WebElement DeleteEmployeeButton;
 
+    @FindBy(xpath = "//button/span[text()=' Search ']")
+    private WebElement SearchButton;
+
     @FindBy(xpath = "//span[text()=' Yes ']")
     private WebElement confirmYesButton;
 
     @FindBy(id = "toast-container")
     private WebElement Message;
 
-    public void clickOnAddEmployeeButton(){
-        clickOnElement(addEmployeeButton);
+    WebElement Webelement;
+
+    public void clickFunction(String element) {
+        switch (element) {
+            case "addEmployeeButton":
+                Webelement = addEmployeeButton;
+                break;
+            case "StatusActiveToClick":
+                Webelement = StatusActiveToClick;
+                break;
+            case "StatusAllToClick":
+                Webelement = StatusAllToClick;
+                break;
+
+            case "EditEmployeeButton":
+                Webelement = EditEmployeeButton;
+                break;
+
+            case "DeleteEmployeeButton":
+                Webelement = DeleteEmployeeButton;
+                break;
+
+            case "confirmYesButton":
+                Webelement = confirmYesButton;
+                break;
+
+            case "SearchButton":
+                Webelement = SearchButton;
+                break;
+
+
+        }
+        clickOnElement(Webelement);
+
     }
+    public void sendKeyFunction(String element, String text){
+            switch (element){
+                case "FirstNameSearch":
+                    Webelement = FirstNameSearch;
+                    break;
+            }
+            sendKeysToElement(Webelement, text);
 
-    public void searchFirstName(String firstName){
-        sendKeysToElement(FirstNameSearch,firstName);
-    }
-
-    public void statusClicks(){
-        clickOnElement(StatusActiveToClick);
-        clickOnElement(StatusAllToClick);
-    }
-
-    public void clickOnEmployeeEditButton(){
-        clickOnElement(EditEmployeeButton);
-    }
-
-    public void clickOnDeleteEmployee(){clickOnElement(DeleteEmployeeButton);}
-
-    public void clickOnYesToConfirm(){clickOnElement(confirmYesButton);}
-
-   // public void verifyDeletingEmployee(){
-    //    Assert.assertEquals("Employee successfully deleted",Message.getText());
-    //}
+        }
 }

@@ -27,20 +27,36 @@ public class EntranceExaminations extends Base {
     @FindBy(id = "toast-container")
     private WebElement Message;
 
-    public void clickOnaddExamButton(){clickOnElement(addExamButton);}
+    WebElement Webelement;
 
-    public void searchExamName(String Name){sendKeysToElement(NameSearchField,Name);}
+    public void clickFunction(String element) {
+        switch (element) {
+            case "addExamButton":
+                Webelement = addExamButton;
+                break;
+            case "NameSearchField":
+                Webelement = NameSearchField;
+                break;
+            case "SearchButton":
+                Webelement = SearchButton;
+                break;
 
-    public void clickOnSearchButton(){clickOnElement(SearchButton);}
+            case "EditButton":
+                Webelement = EditButton;
+                break;
 
-    public void clickOnEditButton(){clickOnElement(EditButton);}
+            case "DeleteEmployeeButton":
+                Webelement = DeleteEmployeeButton;
+                break;
 
-    public void clickOnDeleteEmployee(){clickOnElement(DeleteEmployeeButton);}
+            case "confirmYesButton":
+                Webelement = confirmYesButton;
+                break;
 
-    public void clickOnYesToConfirm(){clickOnElement(confirmYesButton);}
 
-    public void verifyDeletingExam(){
-        Assert.assertEquals("Employee successfully deleted",Message.getText());
+        }
+        clickOnElement(Webelement);
+
     }
 }
 
